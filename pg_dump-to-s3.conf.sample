@@ -19,5 +19,8 @@ PG_DATABASES="database1,database2,database3"
 # Bucket and path within S3
 S3_PATH="my_bucket/my_directory"
 
+# Extra arguments to pass to AWS CLI when running
+AWS_CLI_ARGS=""
+
 # Number of days until the backups are deleted from S3
 DELETE_AFTER="7 days"

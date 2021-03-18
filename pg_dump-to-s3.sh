@@ -39,7 +39,7 @@ for db in "${DBS[@]}"; do
     pg_dump -Fc -h $PG_HOST -U $PG_USER -p $PG_PORT $db > /tmp/"$FILENAME".dump
 
     # Copy to S3
-    aws s3 cp /tmp/"$FILENAME".dump s3://$S3_PATH/"$FILENAME".dump --storage-class STANDARD_IA
+    aws s3 cp /tmp/"$FILENAME".dump s3://$S3_PATH/"$FILENAME".dump --storage-class STANDARD_IA "$AWS_CLI_ARGS"
 
     # Delete local file
     rm /tmp/"$FILENAME".dump
